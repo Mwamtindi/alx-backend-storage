@@ -7,4 +7,5 @@
 SELECT origin, SUM(nb_fans) AS nb_fans
 FROM metal_bands
 GROUP BY origin
+HAVING SUM(nb_fans) > 0
 ORDER BY nb_fans DESC;
