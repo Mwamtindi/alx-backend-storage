@@ -7,7 +7,7 @@
 CREATE TEMPORARY TABLE tmp_returns (origin VARCHAR(255), nb_fans INT);
 
 INSERT INTO tmp_returns (origin, nb_fans)
-SELECT origin, COUNT(DISTINCT b_name) as nb_fans
+SELECT origin, COUNT(DISTINCT band_name) as nb_fans
 FROM metal_bands
 GROUP BY origin
 ORDER BY nb_fans DESC;
