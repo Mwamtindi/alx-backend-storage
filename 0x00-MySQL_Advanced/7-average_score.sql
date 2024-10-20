@@ -13,7 +13,7 @@ BEGIN
 
     -- Update the user's average_score in the users table
     UPDATE users
-    SET average_score = avg_score
+    SET average_score = COALESCE(avg_score, 0)
     WHERE id = user_id;
 END //
 
