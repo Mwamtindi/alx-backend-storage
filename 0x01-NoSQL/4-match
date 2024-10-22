@@ -1,0 +1,2 @@
+// Script to list docs with name="Holberton school" in the db
+db.school.find({ name: "Holberton school" }).pretty()
