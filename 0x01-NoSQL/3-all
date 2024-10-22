@@ -1,0 +1,2 @@
+// Script to list all docs in school collection in a specified db
+db.school.find().pretty()
