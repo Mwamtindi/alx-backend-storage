@@ -1,2 +1,2 @@
 // Script used to list all databases in MongoDB
-echo "show dbs" | mongo
+show dbs
