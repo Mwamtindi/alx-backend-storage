@@ -1,2 +1,2 @@
 // Script to display the number of docs in the school db
-db.school.countDocuments()
+db.school.count()
