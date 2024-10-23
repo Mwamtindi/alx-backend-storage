@@ -4,6 +4,7 @@ This module provides a func to return all students sorted by their avg score.
 """
 
 
+
 def top_students(mongo_collection):
     """
     Returns all students sorted by their average score.
@@ -18,7 +19,7 @@ def top_students(mongo_collection):
     pipeline = [
         {
             "$project": {
-                "name": 1,
+                "name": $name,
                 "averageScore": {"$avg": "$scores.score"}
             }
         },
