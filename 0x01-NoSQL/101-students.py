@@ -2,7 +2,7 @@
 """
 This module provides a func to return all students sorted by their avg score.
 """
-
+import pymongo
 
 
 def top_students(mongo_collection):
@@ -16,7 +16,7 @@ def top_students(mongo_collection):
         A list of student documents sorted by their average score,
         with each document containing the key 'averageScore'.
     """
-    pipeline = [
+    return (mongo_collection.aggregate([
         {
             "$project": {
                 "name": $name,
@@ -24,9 +24,4 @@ def top_students(mongo_collection):
             }
         },
         {"$sort": {"averageScore": -1}}
-    ]
-    return list(mongo_collection.aggregate(pipeline))
-
-
-if __name__ == "__main__":
-    pass
+    ])
